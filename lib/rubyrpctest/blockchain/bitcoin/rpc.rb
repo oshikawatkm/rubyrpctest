@@ -5,16 +5,13 @@ module Rubyrpctest
         module_function
 
         def client
-          
+          @rpc ||= Tapyeus::RPC::TapyrusCoreClient.new(@config)
         end
 
         def configure(config)
           @config = config
         end
 
-        def
-
-        end
 
       end
     end

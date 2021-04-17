@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require_relative "rubyrpctest/version"
+require 'bitcoin'
 
 module Rubyrpctest
-  class Error < StandardError; end
-  # Your code goes here...
+  autoload :Blockchain, 'rubyrpctest/blockchain'
 end

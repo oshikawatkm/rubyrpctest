@@ -1,0 +1,29 @@
+--- !ruby/object:Tapyrus::ChainParams
+network: "dev"
+magic_head: "0b110907"
+message_magic: "Tapyrus Signed Message:\n"
+address_version: "6f"
+p2sh_version: "c4"
+cp2pkh_version: "70"
+cp2sh_version: "c5"
+privkey_version: "ef"
+extended_privkey_version: "04358394"
+extended_pubkey_version: "043587cf"
+bip49_pubkey_p2wpkh_p2sh_version: "044a5262"
+bip49_pubkey_p2wsh_p2sh_version: "024285ef"
+bip49_privkey_p2wpkh_p2sh_version: "044a4e28"
+bip49_privkey_p2wsh_p2sh_version: "024285b5"
+bip84_pubkey_p2wpkh_version: "045f1cf6"
+bip84_pubkey_p2wsh_version: "02575483"
+bip84_privkey_p2wpkh_version: "045f18bc"
+bip84_privkey_p2wsh_version: "02575048"
+default_port: 12383
+rpc_port: 12381
+protocol_version: 10000
+retarget_interval: 2016
+retarget_time: 1209600 # 2 weeks
+target_spacing: 600 # block interval
+max_money: 21000000
+bip34_height: 227931
+dns_seeds:
+bip44_coin_type: 1

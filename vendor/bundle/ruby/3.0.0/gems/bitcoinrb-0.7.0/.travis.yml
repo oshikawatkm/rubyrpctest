@@ -1,0 +1,14 @@
+dist: bionic
+language: ruby
+rvm:
+  - 2.4.10
+  - 2.5.8
+  - 2.6.6
+  - 2.7.2
+  - 3.0.0
+addons:
+  apt:
+    packages:
+      - libleveldb-dev
+script:
+  - bundle exec parallel_test spec/ -n 6 --type rspec
