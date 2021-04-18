@@ -1,18 +1,26 @@
 module Rubyrpctest
   module Blockchain
-    module Bitcoin
-      class Rpc
-        module_function
+    module BlockchainAdapter
+      module Bitcoin
+        module RPC
+          module_function
 
-        def client
-          @rpc ||= Tapyeus::RPC::TapyrusCoreClient.new(@config)
+          def client
+            @rpc ||= Bitcoin::RPC::BitcoinCoreClient.new(@config)
+          end
+
+          def configure(config)
+            @config = config
+          end
+
+          def perform_as(wallet)
+            before = client.config[:wallet]
+            client.config[:wallet] = wallet
+            yield(client)
+          ensure
+            client.config[:wallet] = before
+          end
         end
-
-        def configure(config)
-          @config = config
-        end
-
-
       end
     end
   end
