@@ -1,7 +1,7 @@
 module Rubyrpctest
-  module Blockchain
+  class Blockchain
     class BlockchainAdapter
-      autoload :Bitcoin, 'rubyrpctest/blockchain/bitcoin/bitcoind'
+      autoload :BitcoinCore, 'rubyrpctest/blockchain/bitcoin/bitcoind'
 
       class << self
         attr_writer :blockchain_adapter
@@ -9,10 +9,6 @@ module Rubyrpctest
         def blockchain_adapter
           @blockchain_adapter or raise 'miss'
         end
-      end
-
-      def initialize
-        puts "born"
       end
 
       def create_wallet(wallet_name)

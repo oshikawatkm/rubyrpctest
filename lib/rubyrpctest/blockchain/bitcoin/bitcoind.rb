@@ -1,9 +1,9 @@
 
 # require './vendor/bundle/ruby/3.0.0/bundler/gems/rubyrpctest-b8ac2c1debac/lib/rubyrpctest/blockchain/bitcoin/rpc'
 module Rubyrpctest
-  module Blockchain
-    module BlockchainAdapter
-      module Bitcoin
+  class Blockchain
+    class BlockchainAdapter
+      module BitcoinCore
         autoload :RPC, 'rubyrpctest/blockchain/bitcoin/rpc'
         class Bitcoind
 
