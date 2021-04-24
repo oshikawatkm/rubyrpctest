@@ -1,24 +1,22 @@
 module Rubyrpctest
   class Blockchain
-    class BlockchainAdapter
-      autoload :BitcoinCore, 'rubyrpctest/blockchain/bitcoin/bitcoind'
+    module Internal
+      class BlockchainAdapter < AbstructBlockchain
+        class << self
+          attr_writer :blockchain_adapter
 
-      class << self
-        attr_writer :blockchain_adapter
+          def create
+            new(Rubyrpctest::Blockchain::Internal::BlockchainAdapter.new)
+          end
 
-        def blockchain_adapter
-          @blockchain_adapter or raise 'miss'
+          def blockchain_adapter
+            @blockchain_adapter or raise Errors::ShouldInitializeBlockchainAdapter, 'You should initialize blockchain adapter using `Rubyrpctest::Blockchain::Internal::Blockchain.wallet_adapter = some wallet adapter instance`.'
+          end
+
         end
-      end
 
-      def create_wallet(wallet_name)
-        blockchain_adapter.create_wallet(wallet_name)
-      end
-
-      private
-
-      def wallet_adapter
-        self.class.wallet_adapter
+        private
+      
       end
     end
   end

@@ -1,7 +1,7 @@
 module Rubyrpctest
   class Blockchain
-    class BlockchainAdapter
-      module BitcoinCore
+    module Internal
+      class Bitcoind
         module RPC
           module_function
 

@@ -1,6 +1,6 @@
 module Rubyrpctest
-  module Blockchain
-    module BlockchainAdapter
+  class Blockchain
+    module Internal
       class AbstructBlockchain
 
         def create_wallet(wallet_name)

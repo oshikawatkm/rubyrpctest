@@ -1,17 +1,18 @@
 module Rubyrpctest
   class Blockchain
+    module Internal
     autoload :BlockchainAdapter, 'rubyrpctest/blockchain/blockchain_adapter'
+    autoload :AbstructBlockchain, 'rubyrpctest/blockchain/abstruct_blcokchain/abstruct_blcokchain'
+    autoload :Bitcoind, 'rubyrpctest/blockchain/bitcoin/bitcoind'
     
-    class << self
-      def create
-        new(Rubyrpctest::Blockchain::BlockchainAdapter.new)
-      end
+    end
 
+    class << self
+        
       def configure(config)
         case config[:blockchain]
         when 'bitcoin'
-          Rubyrpctest::Blockchain::BlockchainAdapter::BitcoinCore::RPC.configure(config)
-          Rubyrpctest::Blockchain::BlockchainAdapter.blockchain_adapter = Rubyrpctest::Blockchain::BlockchainAdapter::BitcoinCore::Bitcoind.new(config)
+          Rubyrpctest::Blockchain::Internal::BlockchainAdapter.blockchain_adapter = Rubyrpctest::Blockchain::Internal::Bitcoind.new(config)
         when 'litecoin'
           raise 'implementing...'
         else
@@ -20,8 +21,6 @@ module Rubyrpctest
       end
 
     end
-
-    private
 
   end
 end
