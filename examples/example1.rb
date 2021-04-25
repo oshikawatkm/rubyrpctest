@@ -1,6 +1,28 @@
 require 'rubyrpctest'
 
-config = { blockchain: 'bitcoin', shema: 'http', host: '127.0.0.1', port: 18443, user: 'rpcuser', password: 'rpcpassword' }
+config = { 
+  blockchain: {
+    type: 'bitcoin', 
+    schema: 'http', 
+    host: '0.0.0.0', 
+    port: 18443, 
+    user: 'rpcuser', 
+    password: 'rpcpassword',
+    default_wallet: ''
+  },
+  cas: {
+    type: 'ipfs',
+    schema: 'https',
+    host: 'ipfs.infura.io',
+    port: '5001'
+  },
+  did: {
+    protocol: 'sidetree'
+  },
+  db: {
+    type: 'mongo'
+  }
+}
 
 Rubyrpctest::Blockchain.configure(config)
-Rubyrpctest::Blockchain::BlockchainAdapter.create_wallet('hoge')
+Rubyrpctest::Blockchain::Internal::BlockchainAdapter.create_wallet('hoge')
