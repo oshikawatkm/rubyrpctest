@@ -1,5 +1,5 @@
 module Rubyrpctest
-  class Core
+  class DID
     module Internal
     
     end

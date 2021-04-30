@@ -5,4 +5,5 @@ require 'bitcoin'
 
 module Rubyrpctest
   autoload :Blockchain, 'rubyrpctest/blockchain'
+  autoload :Cas, 'rubyrpctest/cas'
 end
