@@ -5,7 +5,7 @@ module Rubyrpctest
         module Operations
 
           def createDid
-
+            createOperation
           end
 
           def resolve

@@ -1,9 +1,5 @@
 module Rubyrpctest
   class Cas
-    module Internal
-      autoload :Connection, 'rubyrpctest/cas/connection'
-      autoload :Ipfs, 'rubyrpctest/cas/ipfs/ipfs'
-    end
 
     class << self
 

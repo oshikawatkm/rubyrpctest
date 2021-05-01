@@ -1,8 +1,5 @@
 module Rubyrpctest
   class DID
-    module Internal
-    
-    end
 
     def configure
 
