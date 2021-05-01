@@ -9,7 +9,7 @@ module Rubyrpctest
             updatePublicKey, updatePrivateKey = Rubyrpctest::Utils.generateEs256kKeyPair
             signingPublicKey, signingPrivateKey = generateKeyPair
             services = generateService
-            operationRequest = genrrateOperationRequest 
+            operationRequest = generateOperationRequest 
             createOperation = nil
             return [
               createOperation,
