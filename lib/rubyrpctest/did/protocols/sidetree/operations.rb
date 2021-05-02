@@ -1,41 +1,49 @@
 module Rubyrpctest
   class DID
-    module Protocols
+    module Internal
       class Sidetree
         module Operations
+          autoload :CreateOperation, 'rubyrpctest/did/protocols/sidetree/operations/create_operation'
+          autoload :OperationType, 'rubyrpctest/did/protocols/sidetree/operations/operation_type'
+          autoload :PatchAction, 'rubyrpctest/did/protocols/sidetree/operations/patch_action'
           module_function
 
           def createOperation
-            recoveryPublicKey, recoveryPrivateKey = Rubyrpctest::Utils.generateEs256kKeyPair
-            updatePublicKey, updatePrivateKey = Rubyrpctest::Utils.generateEs256kKeyPair
-            signingPublicKey, signingPrivateKey = generateKeyPair
-            services = generateService
-            operationRequest = generateOperationRequest 
-            createOperation = nil
+            recoveryPublicKey, recoveryPrivateKey = Rubyrpctest::Utils::Key.generateEs256kKeyPair
+            updatePublicKey, updatePrivateKey = Rubyrpctest::Utils::Key.generateEs256kKeyPair
+            signingPublicKey, signingPrivateKey = generateKeyPair('', '')
+            services = generateService(['serviceId123'])
+            operationRequest = nil #generateOperationRequest 
+            createOperation = CreateOperation.new(
+              recoveryPublicKey, 
+              updatePublicKey,
+              signingPublicKey,
+              services
+            )
             return [
               createOperation,
               operationRequest,
               recoveryPublicKey,
               recoveryPrivateKey,
               updatePublicKey,
-              updatePrivateKeys,
+              updatePrivateKey,
               signingPublicKey,
               signingPrivateKey
             ]
           end
 
-          def generateKeyPair(id:, purposes:)
-            publicKey, privateKey = Rubyrpctest::Utils.generateEs256kKeyPair
+          def generateKeyPair(id = 'signingKey', purposes)
+            publicKey, privateKey = Rubyrpctest::Utils::Key.generateEs256kKeyPair
             publicKeyModel = { 
               'id': id, 
               'type': 'EcdsaSecp256k1VerificationKey2019',
               'publicKeyJwk': publicKey,
-              'purposes': purposes 
+              'purposes': purposes ? purposes : []
             }
             [publicKeyModel, privateKey]
           end
 
-          def generateService(ids:)
+          def generateService(ids = ['serviceId123'])
             services = Array.new
             ids.each do |id|
               services.push({
@@ -49,6 +57,7 @@ module Rubyrpctest
 
           private
 
+        end
       end
     end
   end

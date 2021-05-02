@@ -7,4 +7,5 @@ module Rubyrpctest
   autoload :Blockchain, 'rubyrpctest/blockchain'
   autoload :Cas, 'rubyrpctest/cas'
   autoload :DID, 'rubyrpctest/did'
+  autoload :Utils, 'rubyrpctest/utils'
 end

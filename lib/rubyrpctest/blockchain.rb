@@ -9,7 +9,7 @@ module Rubyrpctest
     class << self
         
       def configure(config)
-        case config[:blockchain]
+        case config[:blockchain][:type]
         when 'bitcoin'
           Rubyrpctest::Blockchain::Internal::BlockchainAdapter.blockchain_adapter = Rubyrpctest::Blockchain::Internal::Bitcoind.new(config)
         when 'litecoin'
