@@ -3,6 +3,7 @@ module Rubyrpctest
     module Protocols
       class Sidetree
         module Operations
+          module_function
 
           def createOperation
             recoveryPublicKey, recoveryPrivateKey = Rubyrpctest::Utils.generateEs256kKeyPair

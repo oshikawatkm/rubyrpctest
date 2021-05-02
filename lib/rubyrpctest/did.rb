@@ -1,5 +1,9 @@
 module Rubyrpctest
-  class Did
+  class DID
+    module Internal
+      autoload :DIDAdapter, 'rubyrpctest/did/did_adapter'
+      autoload :Sidetree, 'rubyrpctest/did/protocols/sidetree'
+    end
 
     class << self
 

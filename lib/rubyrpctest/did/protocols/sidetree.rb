@@ -1,16 +1,16 @@
 module Rubyrpctest
   class DID
     module Protocols
+      autoload :Operations, 'rubyrpctest/did/protocols/sidetree/operations'
       class Sidetree
-        module Operations
 
-          def createDid
-            createOperation
-          end
+        def createDid
+          Operations.createOperation
+        end
 
-          def resolve
+        def resolve
 
-          end
+        end
 
       end
     end

@@ -1,10 +1,9 @@
 module Rubyrpctest
   class Blockchain
     module Internal
-    autoload :BlockchainAdapter, 'rubyrpctest/blockchain/blockchain_adapter'
-    autoload :AbstructBlockchain, 'rubyrpctest/blockchain/abstruct_blcokchain/abstruct_blcokchain'
-    autoload :Bitcoind, 'rubyrpctest/blockchain/bitcoin/bitcoind'
-    
+      autoload :BlockchainAdapter, 'rubyrpctest/blockchain/blockchain_adapter'
+      autoload :AbstructBlockchain, 'rubyrpctest/blockchain/abstruct_blcokchain/abstruct_blcokchain'
+      autoload :Bitcoind, 'rubyrpctest/blockchain/bitcoin/bitcoind'
     end
 
     class << self
