@@ -4,7 +4,7 @@ module Rubyrpctest
       class Sidetree
         module Operations
           class CreateOperation
-            attr_accessor: operationBuffer, didUniqueSuffix, delta, deltaHash
+            attr_accessor :operationBuffer, :didUniqueSuffix, :delta, :deltaHash
 
             def initialize(operationBuffer, didUniqueSuffix, suffixData, delta)
               @operationBuffer = operationBuffer
