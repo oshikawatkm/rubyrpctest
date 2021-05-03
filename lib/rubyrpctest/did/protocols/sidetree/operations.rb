@@ -13,13 +13,14 @@ module Rubyrpctest
             updatePublicKey, updatePrivateKey = Rubyrpctest::Utils::Key.generateEs256kKeyPair
             signingPublicKey, signingPrivateKey = generateKeyPair('', '')
             services = generateService(['serviceId123'])
-            operationRequest = nil #generateOperationRequest 
-            createOperation = CreateOperation.new(
+            operationRequest = CreateOperation.new(
               recoveryPublicKey, 
               updatePublicKey,
               signingPublicKey,
               services
             )
+            operationRequestBuffer = operationRequest.pack("H*")
+            createOperation = CreateOperation.parse(operationRequestBuffer)
             return [
               createOperation,
               operationRequest,
@@ -53,6 +54,10 @@ module Rubyrpctest
               })
             end
             services
+          end
+
+          def generateOperationRequest
+
           end
 
           private

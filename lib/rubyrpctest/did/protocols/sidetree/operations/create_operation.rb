@@ -4,20 +4,35 @@ module Rubyrpctest
       class Sidetree
         module Operations
           class CreateOperation
-            attr_reader: didUniqueSuffix
+            attr_accessor: operationBuffer, didUniqueSuffix, delta, deltaHash
 
-            def initialize(recoveryPublicKey, updatePublicKey, otherPublicKeys, services)
+            def initialize(operationBuffer, didUniqueSuffix, suffixData, delta)
+              @operationBuffer = operationBuffer
+              @didUniqueSuffix = didUniqueSuffix
+              @suffixData = suffixData
+              @delta = delta
+            end
+
+            def generate(recoveryPublicKey, updatePublicKey, otherPublicKeys, services)
               patches = generatePatches(otherPublicKeys, services)
               delta = generateDelta(updatePublicKey, patches)
               deltaHash = Hash.doubleHashAndEncode(delta)
 
               recoveryCommetment = generateRecoveryCommetment(recoveryPublicKey)
-              suffixData = { 'deltaHash': deltaHash, 'recoveryCommetment': recoveryCommetment } 
+              suffixData = { 'deltaHash': deltaHash, 'recoveryCommetment': recoveryCommetment }
 
               { type: OperationType::Create, suffixData, delta }
             end
 
-            def didUniqueSuffix
+            def parse(operationBuffer)
+              @operationBuffer = operationBuffer
+              @didUniqueSuffix = Hash.hashAndEncode(operationJsonString)
+              @suffixData = operationObject.suffixData
+              @delta = operationObject.delta
+              CreateOperation.new(@operationBuffer, @didUniqueSuffix, @suffixData, @delta)
+            end
+
+            def self.didUniqueSuffix
               @didUniqueSuffix
             end
 
