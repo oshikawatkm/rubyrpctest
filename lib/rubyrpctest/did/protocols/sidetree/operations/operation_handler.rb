@@ -1,6 +1,6 @@
 module Rubyrpctest
   class DID
-    module Protocols
+    module Internal
       class Sidetree
         module Operations
           class OperationHandler
