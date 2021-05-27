@@ -1,23 +1,21 @@
 module Rubyrpctest
   class DID
-    module Internal
-      autoload :DIDAdapter, 'rubyrpctest/did/did_adapter'
-      autoload :Sidetree, 'rubyrpctest/did/protocols/sidetree'
-    end
+    autoload :DIDAdapter, 'rubyrpctest/did_adapter'
+    autoload :Protocol, 'rubyrpctest/protocol'
+    autoload :Utils, 'rubyrpctest/utils'
 
     class << self
 
       def configure(config)
         case config[:did][:protocol]
         when 'sidetree'
-          Rubyrpctest::DID::Internal::DIDAdapter.did_adapter = Rubyrpctest::DID::Internal::Sidetree.new
+          Rubyrpctest::DID::DIDAdapter.did_adapter = Rubyrpctest::DID::Protocol::Sidetree.new
         end
       end
 
       def createDid
         did_adapter.create
       end
-  
   
       def resolve
         did_adapter.resolve

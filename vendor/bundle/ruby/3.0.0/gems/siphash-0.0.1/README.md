@@ -1,4 +1,0 @@
-## siphash-ruby
-
-A Ruby implementation of SipHash[http://131002.net/siphash/siphash.pdf].
-Contains an implementation of SipHash-2-4.

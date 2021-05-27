@@ -1,6 +1,6 @@
 module Rubyrpctest
   class DID
-    module Internal
+    module Protocol
       class DID
         attr_writer :didUniqueSuffix
         def initialize

@@ -1,6 +1,6 @@
 module Rubyrpctest
   class DID
-    module Internal
+    module Protocol
       class Sidetree
         module Operations
           autoload :CreateOperation, 'rubyrpctest/did/protocols/sidetree/operations/create_operation'
