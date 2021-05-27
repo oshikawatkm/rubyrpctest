@@ -3,8 +3,9 @@ module Rubyrpctest
     module Internal
       class Sidetree
         module Operations
-          class CreateOperation
+          class CreateOperation < OperationModel
             attr_accessor :operationBuffer, :didUniqueSuffix, :delta, :deltaHash
+            @@type = OperationType.Create
 
             def initialize(operationBuffer, didUniqueSuffix, suffixData, delta)
               @operationBuffer = operationBuffer
@@ -19,7 +20,7 @@ module Rubyrpctest
               deltaHash = Hash.doubleHashAndEncode(delta)
 
               recoveryCommetment = generateRecoveryCommetment(recoveryPublicKey)
-              suffixData = { 'deltaHash': deltaHash, 'recoveryCommetment': recoveryCommetment }
+              suffixData = { type: OperationType::Create, 'suffixData': suffixData, 'delta': delta }
 
               { type: OperationType::Create, suffixData, delta }
             end

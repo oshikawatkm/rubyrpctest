@@ -3,6 +3,7 @@ PATH
   specs:
     rubyrpctest (0.1.0)
       bitcoinrb (>= 0.7.0)
+      ecdsa
 
 GEM
   remote: https://rubygems.org/
@@ -42,6 +43,7 @@ GEM
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     iniparse (1.5.0)
+    json-canonicalization (0.2.1)
     json_pure (2.5.1)
     leb128 (1.0.0)
     middleware (0.1.0)
@@ -64,6 +66,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  json-canonicalization (~> 0.2.1)
   rake (~> 13.0)
   rubyrpctest!
 
