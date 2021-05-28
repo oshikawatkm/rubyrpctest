@@ -12,6 +12,9 @@ module Rubyrpctest
 
         end
 
+        def createOperation
+        
+        end
       end
     end
   end

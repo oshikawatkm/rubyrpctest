@@ -8,43 +8,43 @@ module Rubyrpctest
           autoload :PatchAction, 'rubyrpctest/did/protocols/sidetree/operations/patch_action'
           module_function
 
-          def createOperation
-            recoveryPublicKey, recoveryPrivateKey = Rubyrpctest::Utils::Key.generateEs256kKeyPair
-            updatePublicKey, updatePrivateKey = Rubyrpctest::Utils::Key.generateEs256kKeyPair
-            signingPublicKey, signingPrivateKey = generateKeyPair('', '')
-            services = generateService(['serviceId123'])
-            operationRequest = CreateOperation.new(
-              recoveryPublicKey, 
-              updatePublicKey,
-              signingPublicKey,
+          def create_operation
+            recovery_pubey, recovery_prikey = Rubyrpctest::DID::Utils::Key.generate_es256k_key_pair
+            update_pubkey, update_privey = Rubyrpctest::DID::Utils::Key.generate_es256k_key_pair
+            signing_pubkey, signing_privkey = generate_key_pair('', '')
+            services = generate_service(['serviceId123'])
+            operation_request = CreateOperation.new(
+              recovery_pubey, 
+              update_pubkey,
+              update_pubkey,
               services
             )
-            operationRequestBuffer = operationRequest.pack("H*")
-            createOperation = CreateOperation.parse(operationRequestBuffer)
+            operation_request_buffer = operation_request.pack("H*")
+            createOperation = CreateOperation.parse(operation_request_buffer)
             return [
-              createOperation,
-              operationRequest,
-              recoveryPublicKey,
-              recoveryPrivateKey,
-              updatePublicKey,
-              updatePrivateKey,
-              signingPublicKey,
-              signingPrivateKey
+              create_operation,
+              operation_request,
+              recovery_pubey,
+              recovery_prikey,
+              update_pubkey,
+              update_privey,
+              signing_pubkey,
+              signing_privkey
             ]
           end
 
-          def generateKeyPair(id = 'signingKey', purposes)
-            publicKey, privateKey = Rubyrpctest::Utils::Key.generateEs256kKeyPair
-            publicKeyModel = { 
+          def generate_key_pair(id = 'signingKey', purposes)
+            pubkey, privkey = Rubyrpctest::DID::Utils::Key.generate_es256k_key_pair
+            pubkey_model = { 
               'id': id, 
               'type': 'EcdsaSecp256k1VerificationKey2019',
-              'publicKeyJwk': publicKey,
+              'publicKeyJwk': pubkey,
               'purposes': purposes ? purposes : []
             }
-            [publicKeyModel, privateKey]
+            [pubkey_model, privkey]
           end
 
-          def generateService(ids = ['serviceId123'])
+          def generate_service(ids = ['serviceId123'])
             services = Array.new
             ids.each do |id|
               services.push({
@@ -56,7 +56,7 @@ module Rubyrpctest
             services
           end
 
-          def generateOperationRequest
+          def generate_operation_request
 
           end
 

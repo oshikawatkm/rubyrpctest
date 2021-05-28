@@ -3,7 +3,7 @@ let(:adapter) { Rubyrpctest::DID::DIDAdapter.new }
 
 
   describe '#generate' do 
-
+    # Rubyrpctest::DID::Protocol::Sidetree::Operations::CreateOperation.generate()
   end
 
   describe '#parse' do 
