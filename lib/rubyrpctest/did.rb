@@ -1,8 +1,8 @@
 module Rubyrpctest
   class DID
-    autoload :DIDAdapter, 'rubyrpctest/did_adapter'
-    autoload :Protocol, 'rubyrpctest/protocol'
-    autoload :Utils, 'rubyrpctest/utils'
+    autoload :DIDAdapter, 'rubyrpctest/did/did_adapter'
+    autoload :Protocol, 'rubyrpctest/did/protocol'
+    autoload :Utils, 'rubyrpctest/did/utils'
 
     class << self
 
