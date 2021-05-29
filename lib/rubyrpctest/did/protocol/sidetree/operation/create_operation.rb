@@ -20,9 +20,7 @@ module Rubyrpctest
               deltaHash = Hash.doubleHashAndEncode(delta)
 
               recoveryCommetment = generateRecoveryCommetment(recoveryPublicKey)
-              suffixData = { type: OperationType::Create, 'suffixData': suffixData, 'delta': delta }
-
-              { type: OperationType::Create, suffixData, delta }
+              suffixData = { type: OperationType::Create, suffixData: suffixData, delta: delta }
             end
 
             def parse(operationBuffer)

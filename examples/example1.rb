@@ -25,6 +25,7 @@ config = {
 }
 
 Rubyrpctest::Blockchain.configure(config)
-Rubyrpctest::DID.configure(config)
+did = Rubyrpctest::DID.configure(config)
+did.create_did
 
 Rubyrpctest::Blockchain::Internal::BlockchainAdapter.create_wallet('hoge')

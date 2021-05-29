@@ -13,7 +13,7 @@ module Rubyrpctest
         end
       end
 
-      def createDid
+      def create_did
         did_adapter.create
       end
   

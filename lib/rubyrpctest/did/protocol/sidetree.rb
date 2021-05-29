@@ -5,7 +5,11 @@ module Rubyrpctest
 
       class Sidetree
 
-        def createDid
+        def create_did
+          Operations.create_operation
+        end
+
+        def create_operation
           Operations.create_operation
         end
 

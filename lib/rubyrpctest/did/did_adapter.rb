@@ -8,7 +8,7 @@ module Rubyrpctest
           @did_adapter or raise Errors::ShouldInitializeCoreAdapter, 'You should initialize core adapter using `Rubyrpctest::Blockchain::Internal::Blockchain.wallet_adapter = some wallet adapter instance`.'
         end
 
-        def createDid
+        def create_did
           did_adapter.createDid
         end
 
