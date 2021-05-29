@@ -2,7 +2,7 @@ module Rubyrpctest
   class DID
     module Protocol
       class Sidetree
-        module Operations
+        module Operation
           module OperationType
             Create = 'create'
             Update = 'update'

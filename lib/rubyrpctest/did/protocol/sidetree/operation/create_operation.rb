@@ -2,7 +2,7 @@ module Rubyrpctest
   class DID
     module Protocol
       class Sidetree
-        module Operations
+        module Operation
           class CreateOperation < OperationModel
             attr_accessor :operationBuffer, :didUniqueSuffix, :delta, :deltaHash
             @@type = OperationType.Create

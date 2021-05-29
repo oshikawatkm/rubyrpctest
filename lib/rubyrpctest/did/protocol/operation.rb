@@ -4,8 +4,8 @@ module Rubyrpctest
       class Sidetree
         module Operations
           autoload :CreateOperation, 'rubyrpctest/did/protocol/sidetree/operation/create_operation'
-          autoload :OperationType, 'rubyrpctest/did/protocol/sidetree/operation/operation_type'
-          autoload :PatchAction, 'rubyrpctest/did/protocol/sidetree/operation/patch_action'
+          autoload :OperationType, 'rubyrpctest/did/protocol/sidetree/operation/enum/operation_type'
+          autoload :PatchAction, 'rubyrpctest/did/protocol/sidetree/operation/enum/patch_action'
           module_function
 
           def create_operation
