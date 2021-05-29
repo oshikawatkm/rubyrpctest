@@ -1,5 +1,5 @@
 module Rubyrpctest
-  module DID
+  class DID
     module Utils
       autoload :JsonCanonicalizer, 'rubyrpctest/utils/json_canonicalizer'
       autoload :Hash, 'rubyrpctest/utils/hash'

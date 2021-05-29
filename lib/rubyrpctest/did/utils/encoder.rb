@@ -1,5 +1,5 @@
 module Rubyrpctest
-  module DID
+  class DID
     module Utils
       module Encoder
         module_function

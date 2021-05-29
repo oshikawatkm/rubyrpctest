@@ -1,5 +1,7 @@
 module Rubyrpctest
-  module Protocol
-    autoload :Sidetree, 'rubyrpctest/did/protocols/sidetree'
+  class DID
+    module Protocol
+      autoload :Sidetree, 'rubyrpctest/did/protocol/sidetree'
+    end
   end
 end
