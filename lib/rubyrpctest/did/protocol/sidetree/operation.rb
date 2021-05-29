@@ -3,9 +3,9 @@ module Rubyrpctest
     module Protocol
       class Sidetree
         module Operations
-          autoload :CreateOperation, 'rubyrpctest/did/protocols/sidetree/operations/create_operation'
-          autoload :OperationType, 'rubyrpctest/did/protocols/sidetree/operations/operation_type'
-          autoload :PatchAction, 'rubyrpctest/did/protocols/sidetree/operations/patch_action'
+          autoload :CreateOperation, 'rubyrpctest/did/protocol/sidetree/operation/create_operation'
+          autoload :OperationType, 'rubyrpctest/did/protocol/sidetree/operation/operation_type'
+          autoload :PatchAction, 'rubyrpctest/did/protocol/sidetree/operation/patch_action'
           module_function
 
           def create_operation
