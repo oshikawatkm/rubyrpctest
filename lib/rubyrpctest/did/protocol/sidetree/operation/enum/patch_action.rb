@@ -4,11 +4,11 @@ module Rubyrpctest
       class Sidetree
         module Operation
           module PatchAction
-            Replace = 'replace',
-            AddPublicKeys = 'add-public-keys',
-            RemovePublicKeys = 'remove-public-keys',
-            AddServices = 'add-services',
-            RemoveServices = 'remove-services'
+            REPLACE = 'replace',
+            ADD_PUBLICK_KEYS = 'add-public-keys',
+            REMOVE_PUBLIC_KEYS = 'remove-public-keys',
+            ADD_SERVICES = 'add-services',
+            REMOVE_SERVICES = 'remove-services'
           end
         end
       end

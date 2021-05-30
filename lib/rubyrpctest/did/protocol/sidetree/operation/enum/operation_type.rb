@@ -4,10 +4,10 @@ module Rubyrpctest
       class Sidetree
         module Operation
           module OperationType
-            Create = 'create'
-            Update = 'update'
-            Deactivate = 'deactivate'
-            Recover = 'recover'
+            CREATE = 'create'
+            UPDATE = 'update'
+            DEACTIVATE = 'deactivate'
+            RECOVER = 'recover'
           end
         end
       end

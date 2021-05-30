@@ -5,7 +5,7 @@ module Rubyrpctest
         module Operation
           class CreateOperation < OperationModel
             attr_accessor :operationBuffer, :didUniqueSuffix, :delta, :deltaHash
-            @@type = OperationType.Create
+            @@type = OperationType.CREATE
 
             def initialize(operationBuffer, didUniqueSuffix, suffixData, delta)
               @operationBuffer = operationBuffer
