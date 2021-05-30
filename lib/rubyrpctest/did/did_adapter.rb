@@ -9,7 +9,7 @@ module Rubyrpctest
         end
 
         def create_did
-          did_adapter.createDid
+          did_adapter.create_did
         end
 
         def resolve

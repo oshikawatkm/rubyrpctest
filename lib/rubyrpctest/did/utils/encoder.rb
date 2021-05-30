@@ -8,7 +8,7 @@ module Rubyrpctest
           Base64.encode64(content)
         end
   
-        def decodeAsBuffer
+        def decode_as_buffer
           
         end
 

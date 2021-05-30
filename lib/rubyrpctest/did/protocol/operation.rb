@@ -2,7 +2,7 @@ module Rubyrpctest
   class DID
     module Protocol
       class Sidetree
-        module Operations
+        module Operation
           autoload :CreateOperation, 'rubyrpctest/did/protocol/sidetree/operation/create_operation'
           autoload :OperationType, 'rubyrpctest/did/protocol/sidetree/operation/enum/operation_type'
           autoload :PatchAction, 'rubyrpctest/did/protocol/sidetree/operation/enum/patch_action'

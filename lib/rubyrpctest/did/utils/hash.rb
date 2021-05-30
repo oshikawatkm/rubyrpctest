@@ -8,18 +8,18 @@ module Rubyrpctest
           Digest::SHA256.digest(content)
         end
   
-        def doubleHash(content)
+        def double_hash(content)
           content = sha256hash(content)
           sha256hash(content)
         end
       
-        def hashAndEncode(content)
+        def hash_and_encode(content)
           content = sha256hash(content)
           Encoder.encode(content)
         end
   
-        def doubleHashAndEncode(content)
-          content = doubleHash(content)
+        def double_hash_and_encode(content)
+          content = double_hash(content)
           Encoder.encode(content)
         end
 

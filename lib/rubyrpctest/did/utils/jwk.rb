@@ -4,7 +4,7 @@ module Rubyrpctest
       module Jwk
         module_function
 
-        def createDid
+        def create_did
           did_adapter.createDid
         end
 

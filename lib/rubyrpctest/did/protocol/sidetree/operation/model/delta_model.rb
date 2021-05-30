@@ -2,15 +2,15 @@ module Rubyrpctest
   class DID
     module Protocol
       class Sidetree
-        module Operations
+        module Operation
           class deltaModel
 
             # initilize delta
             # @param patches [Array] 
-            # @param updateCommitment [String] 
-            def initialize(patches: [], updateCommitment:)
+            # @param update_commitment [String] 
+            def initialize(patches: [], update_commitment:)
               @patches = patches
-              @updateCommitment = updateCommitment
+              @update_commitment = update_commitment
             end
 
           end
