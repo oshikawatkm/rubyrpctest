@@ -5,6 +5,7 @@ module Rubyrpctest
         module Operation
           autoload :CreateOperation, 'rubyrpctest/did/protocol/sidetree/operation/create_operation'
           autoload :OperationType, 'rubyrpctest/did/protocol/sidetree/operation/enum/operation_type'
+          autoload :OperationModel, 'rubyrpctest/did/protocol/sidetree/operation/model/operation_model'
           autoload :PatchAction, 'rubyrpctest/did/protocol/sidetree/operation/enum/patch_action'
           module_function
 

@@ -9,10 +9,10 @@ module Rubyrpctest
             # @param didUniqueSuffix [String]
             # @param type [OperationType]
             # @param operationBuffer [Buffer]
-            def initialize(didUniqueSuffix:, type:, operationBuffer:)
-              @didUniqueSuffix = didUniqueSuffix
+            def initialize(did_unique_suffix:, type:, operatio_buffer:)
+              @didUniqueSuffix = did_unique_suffix
               @type = type
-              @operationBuffer = operationBuffer
+              @operation_buffer = operatio_buffer
             end
 
           end
